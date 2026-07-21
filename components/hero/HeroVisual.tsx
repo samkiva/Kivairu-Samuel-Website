@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Terminal, Network, ShieldCheck, Database, Code2 } from 'lucide-react';
+import { Terminal, Network, Cpu, Database, Code2 } from 'lucide-react';
 import { GlassCard } from '@/components/ui';
 import { Floating, HoverLift, HoverScale } from '@/components/animations';
 
@@ -43,31 +43,31 @@ export const HeroVisual = () => {
         </Floating>
       </div>
 
-      {/* Security Node - Bottom Right */}
+      {/* Performance Node - Bottom Right */}
       <div className="absolute bottom-10 right-0 md:right-10 z-30">
         <Floating delay={0.8} yOffset={12} duration={4.5}>
           <HoverLift>
-            <GlassCard className="p-4 rounded-2xl flex items-center gap-4 border-success/20 bg-background/60 backdrop-blur-md shadow-2xl">
-              <div className="p-3 rounded-xl bg-success/10 text-success">
-                <ShieldCheck className="w-6 h-6" />
+            <GlassCard className="p-4 rounded-2xl flex items-center gap-4 border-primary/20 bg-background/60 backdrop-blur-md shadow-2xl">
+              <div className="p-3 rounded-xl bg-primary/10 text-primary">
+                <Cpu className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-sm font-medium">System Secured</div>
-                <div className="text-xs text-muted-foreground">Zero vulnerabilities</div>
+                <div className="text-sm font-medium">Model Deployed</div>
+                <div className="text-xs text-muted-foreground">Production-ready</div>
               </div>
             </GlassCard>
           </HoverLift>
         </Floating>
       </div>
 
-      {/* Floating decorative icons */}
-      <div className="absolute top-1/4 right-1/4 opacity-20">
+      {/* Floating decorative icons — aria-hidden as purely decorative */}
+      <div className="absolute top-1/4 right-1/4 opacity-20" aria-hidden="true">
         <Floating delay={2} yOffset={8} duration={3}>
           <Database className="w-8 h-8" />
         </Floating>
       </div>
       
-      <div className="absolute bottom-1/4 left-1/4 opacity-20">
+      <div className="absolute bottom-1/4 left-1/4 opacity-20" aria-hidden="true">
         <Floating delay={0.5} yOffset={10} duration={6}>
           <Code2 className="w-10 h-10" />
         </Floating>

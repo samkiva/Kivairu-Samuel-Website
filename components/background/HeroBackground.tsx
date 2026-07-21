@@ -40,8 +40,8 @@ export const HeroBackground = () => {
         className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-accent/20 blur-[120px]"
       />
       
-      {/* Noise Overlay for texture */}
-      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      {/* Radial vignette for depth — pure CSS, no external dependencies */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--background))_100%)] opacity-60" />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { Drawer, IconButton, Logo } from '@/components/ui';
 import { MAIN_NAVIGATION } from '@/config/navigation';
 import { SOCIAL_LINKS } from '@/config/socials';
@@ -58,22 +59,31 @@ export const MobileNav = () => {
           </nav>
 
           <div className="p-6 border-t mt-auto">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-row justify-center gap-6">
               <a
                 href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors p-2"
+                aria-label="GitHub"
               >
-                GitHub
+                <FaGithub className="h-5 w-5" />
               </a>
               <a
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors p-2"
+                aria-label="LinkedIn"
               >
-                LinkedIn
+                <FaLinkedin className="h-5 w-5" />
+              </a>
+              <a
+                href={SOCIAL_LINKS.email}
+                className="text-muted-foreground hover:text-foreground transition-colors p-2"
+                aria-label="Email"
+              >
+                <FaEnvelope className="h-5 w-5" />
               </a>
             </div>
           </div>

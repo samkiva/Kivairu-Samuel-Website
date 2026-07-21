@@ -33,6 +33,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
             src={src}
             alt={alt}
             fill
+            sizes="40px"
             className="aspect-square h-full w-full object-cover"
           />
         ) : (
