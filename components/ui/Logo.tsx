@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { cn } from '@/utils/cn';
 import { Typography } from './Typography';
+import { Avatar } from './Avatar';
 
 export type LogoProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
@@ -17,12 +18,13 @@ export const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
         )}
         {...props}
       >
-        {/* Hexagon shape */}
-        <div className="relative flex h-8 w-8 items-center justify-center bg-primary text-primary-foreground rounded-[8px] transform rotate-45">
-          <div className="absolute transform -rotate-45 font-bold tracking-tighter">
-            H
-          </div>
-        </div>
+        <Avatar 
+          src="/profile.jpg" 
+          alt="Kivairu Samuel" 
+          fallbackInitials="KS" 
+          size="sm" 
+          className="border-primary/20 shadow-sm"
+        />
         <Typography variant="h4" className="font-bold tracking-tight mb-0">
           Kivairu Samuel
         </Typography>
