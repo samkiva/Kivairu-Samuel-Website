@@ -14,7 +14,7 @@ export const CURRENTLY_BUILDING: readonly CurrentlyBuilding[] = [
     status: 'Prototyping',
   },
   {
-    title: 'HexSentinel Portfolio',
+    title: 'Kivairu Samuel Portfolio',
     description: 'Building a premium digital headquarters with Next.js, Framer Motion, and Tailwind v4.',
     category: 'Web Development',
     status: 'In Progress',

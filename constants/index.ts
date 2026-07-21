@@ -1,4 +1,4 @@
-export const APP_NAME = 'HexSentinel Portfolio';
+export const APP_NAME = 'Kivairu Samuel Portfolio';
 
 export const BREAKPOINTS = {
   sm: 640,

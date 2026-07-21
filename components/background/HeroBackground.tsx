@@ -8,7 +8,7 @@ export const HeroBackground = () => {
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none bg-background">
       {/* Base Grid Layer */}
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#8881_1px,transparent_1px),linear-gradient(to_bottom,#8881_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)]"
       />
       
       {/* Animated Aurora Gradients */}

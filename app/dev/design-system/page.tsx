@@ -29,7 +29,7 @@ export default function DesignSystemShowcase() {
     <div className="min-h-screen bg-background pb-32">
       {/* Theme Switcher Sticky Header */}
       <div className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md p-4 flex justify-between items-center">
-        <Typography variant="h4">HexSentinel Design System</Typography>
+        <Typography variant="h4">Kivairu Samuel Design System</Typography>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={() => setTheme('light')}>Light</Button>
           <Button variant="outline" size="sm" onClick={() => setTheme('dark')}>Dark</Button>
@@ -80,7 +80,7 @@ export default function DesignSystemShowcase() {
           <SectionDescription>Text styles inherited from Inter standard definitions.</SectionDescription>
           
           <div className="space-y-4">
-            <Typography variant="display">A highly polished design language for &quot;HexSentinel&quot;.</Typography>
+            <Typography variant="display">A highly polished design language for &quot;Kivairu Samuel&quot;.</Typography>
             <Typography variant="h1">Heading 1</Typography>
             <Typography variant="h2">Heading 2</Typography>
             <Typography variant="h3">Heading 3</Typography>

@@ -68,7 +68,7 @@ export const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between mt-12 pt-8 border-t border-border/50 gap-4">
           <Typography variant="small" className="text-muted-foreground text-center md:text-left">
-            © {currentYear} HexSentinel. All rights reserved.
+            © {currentYear} Kivairu Samuel. All rights reserved.
           </Typography>
           <div className="flex items-center gap-2">
             <span className="relative flex h-3 w-3">
