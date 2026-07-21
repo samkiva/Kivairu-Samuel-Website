@@ -61,20 +61,29 @@ export const SkillsCategories = () => {
         {filteredCategories.map((category, catIndex) => (
           <div key={category.id} className="flex flex-col gap-5">
             {/* Category Header */}
-            <div className="flex items-center gap-3 pb-2 border-b border-border/50">
-              <div
-                className="p-2 rounded-lg bg-primary/10 text-primary shrink-0"
-                aria-hidden="true"
-              >
-                <SkillIcon name={category.icon} className="w-4 h-4" />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="text-lg font-bold text-foreground tracking-tight">
-                  {category.title}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {category.description}
-                </p>
+            <div className="flex items-center justify-between gap-3 pb-2 border-b border-border/50">
+              <div className="flex items-center gap-3">
+                <div
+                  className="p-2 rounded-lg bg-primary/10 text-primary shrink-0"
+                  aria-hidden="true"
+                >
+                  <SkillIcon name={category.icon} className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-lg font-bold text-foreground tracking-tight">
+                      {category.title}
+                    </h3>
+                    {category.featured && (
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/20">
+                        Featured Differentiator
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    {category.description}
+                  </p>
+                </div>
               </div>
             </div>
 

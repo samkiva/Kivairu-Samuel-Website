@@ -45,6 +45,14 @@ export const SkillCard = ({ skill }: SkillCardProps) => {
           <p className="text-xs text-muted-foreground leading-relaxed">
             {skill.description}
           </p>
+          {skill.contextEvidence && (
+            <div className="mt-1 p-2 rounded-lg bg-primary/5 border border-primary/10 text-[11px] text-muted-foreground/90 leading-relaxed font-mono">
+              <span className="text-primary font-semibold font-sans uppercase tracking-wider text-[10px] block mb-0.5">
+                Application / Context:
+              </span>
+              {skill.contextEvidence}
+            </div>
+          )}
         </div>
 
         <div className="pt-2 border-t border-border/40 flex items-center justify-between">

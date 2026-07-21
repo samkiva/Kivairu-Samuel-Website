@@ -51,61 +51,61 @@ export const ABOUT_DATA: AboutConfig = {
     'A brief look at who I am, how I think, and why I build what I build.',
 
   introduction:
-    'I am Kivairu Samuel — a Software Developer, AI Engineer, and Data Analyst with a deep commitment to building technology that is intelligent, purposeful, and scalable. My work sits at the intersection of software engineering, machine learning, and data-driven product development.',
+    'I am Kivairu Samuel — a Software Developer, AI Engineer, and Data Analyst. My work bridges the gap between software engineering, machine learning, and embedded hardware to build intelligent, scalable systems.',
 
   story:
-    'My journey began with a fundamental curiosity — I wanted to understand not just how software works, but why it matters. Starting with foundational programming, I quickly found myself drawn toward data and AI as the most powerful levers for solving real problems at scale. Each project I take on deepens my engineering mindset: approach every challenge with first principles, measure outcomes rigorously, and always build with the end user in mind. I believe great software is not just about code — it is about clarity of thinking, disciplined architecture, and continuous learning.',
+    'My journey started in 2024 with a simple goal: understanding how the web works through HTML. That initial curiosity quickly escalated into a deep dive into programming logic, software architecture, and eventually, data analysis and artificial intelligence. Today, I apply those skills in the Aerospace System Research Initiative, helping develop RC planes and drone systems to advance autonomous flight research. For me, the thrill lies at the intersection of software and hardware — writing code that makes physical machines move, react, and fly. I believe that engineering isn\'t just about the code you write today; it\'s about how rapidly you can adapt and learn to build the future.',
 
   quote:
-    'The best engineers are not those who write the most code — they are those who solve the right problems with clarity and purpose.',
+    'Great engineering is not measured by lines of code, but by the ability to rapidly learn, adapt, and solve complex problems across both software and physical systems.',
   quoteAuthor: 'Kivairu Samuel',
 
   currentFocus:
-    'Currently focused on building production-grade AI systems, exploring large language model applications, and deepening expertise in full-stack engineering with a performance-first mindset.',
+    'Currently working on the Aerospace System Research Initiative — developing RC planes and drone systems for autonomous flight research. Simultaneously deepening my expertise in full-stack engineering and hardware-software integration.',
 
   stats: [
-    { value: '15+', label: 'Projects Built' },
-    { value: '20+', label: 'Technologies Mastered' },
-    { value: '2+', label: 'Years Learning' },
-    { value: '5+', label: 'AI Research Areas' },
+    { value: '10+', label: 'Projects Built' },
+    { value: '15+', label: 'Technologies Learned' },
+    { value: '1+', label: 'Year of Building' },
+    { value: '1', label: 'Aerospace Initiative' },
   ],
 
   philosophy: [
     {
-      principle: 'Build with Purpose',
+      principle: 'Continuous Rapid Learning',
       description:
-        'Every line of code should serve a clear objective. Complexity without purpose is waste.',
+        'Technology evolves fast. The most critical skill an engineer can have is the ability to master new tools, languages, and systems quickly.',
+      icon: 'BookOpen',
+    },
+    {
+      principle: 'Solve Meaningful Problems',
+      description:
+        'Every project should address a real need. Writing code without a clear, impactful problem to solve is just noise.',
       icon: 'Target',
     },
     {
-      principle: 'Simplicity Scales',
+      principle: 'Bridge Software & Hardware',
       description:
-        'The most elegant systems are simple at their core. Simplicity reduces bugs, increases velocity, and enables growth.',
+        'The most impactful systems don\'t just live on screens — they interact with the physical world and respond to their environment.',
       icon: 'Layers',
     },
     {
-      principle: 'Data Drives Decisions',
+      principle: 'Make AI Practical',
       description:
-        'Intuition is a starting point. Data is the compass. Build systems that measure what matters.',
-      icon: 'BarChart3',
-    },
-    {
-      principle: 'AI Should Empower',
-      description:
-        'Artificial intelligence must amplify human capability, not replace human judgment.',
+        'Artificial intelligence is a tool, not magic. The goal is to build reliable, data-driven systems that deliver tangible value.',
       icon: 'Brain',
     },
     {
-      principle: 'Accessibility Is Non-Negotiable',
+      principle: 'Build Maintainable Systems',
       description:
-        'Great technology is technology that works for everyone. Inclusion is an engineering responsibility.',
-      icon: 'Users',
+        'Code is read far more often than it is written. Writing clean, modular, and maintainable software is a core responsibility.',
+      icon: 'Code2',
     },
     {
-      principle: 'Performance Matters',
+      principle: 'Engineering with Purpose',
       description:
-        'A slow product is a broken product. Performance is a feature, not an afterthought.',
-      icon: 'Zap',
+        'Whether it\'s a web application or an autonomous drone, every architectural decision should be deliberate and outcome-focused.',
+      icon: 'Lightbulb',
     },
   ],
 
@@ -113,71 +113,71 @@ export const ABOUT_DATA: AboutConfig = {
     {
       title: 'AI Engineering',
       description:
-        'Designing and deploying intelligent systems using machine learning, deep learning, and LLM frameworks.',
+        'Applying machine learning and data analysis to build systems that learn, adapt, and solve complex problems.',
       icon: 'Bot',
     },
     {
       title: 'Full-Stack Development',
       description:
-        'Building scalable web applications from database to deployment with modern frameworks and tools.',
+        'Engineering robust, scalable web applications from the database layer all the way up to the user interface.',
       icon: 'Code2',
+    },
+    {
+      title: 'Embedded Systems',
+      description:
+        'Programming hardware and integrating physical components to make machines respond intelligently to code.',
+      icon: 'Zap',
     },
     {
       title: 'Data Analysis',
       description:
-        'Transforming raw data into actionable insight through rigorous analysis, visualization, and modeling.',
+        'Extracting meaningful insights from raw data using rigorous analytical and statistical methods.',
       icon: 'LineChart',
+    },
+    {
+      title: 'Aerospace Integration',
+      description:
+        'Developing and researching RC planes and drone systems for autonomous and remote-controlled flight.',
+      icon: 'Target',
     },
     {
       title: 'Continuous Learning',
       description:
-        'Staying at the frontier of technology through research, experimentation, and deliberate practice.',
+        'Constantly expanding my technical horizon to tackle completely new challenges across different engineering domains.',
       icon: 'BookOpen',
-    },
-    {
-      title: 'Problem-First Thinking',
-      description:
-        'Starting every project by deeply understanding the problem before writing a single line of code.',
-      icon: 'Lightbulb',
-    },
-    {
-      title: 'Open Collaboration',
-      description:
-        'Contributing to communities of developers and researchers to build better technology together.',
-      icon: 'GitMerge',
     },
   ],
 
   timeline: [
     {
       year: '2024',
-      title: 'First Line of Code',
+      title: 'First Line of Code — HTML',
       description:
-        'Discovered programming and began learning foundational software development concepts.',
+        'Started the journey with the fundamentals — learning how websites are structured with HTML and how the web works.',
     },
     {
       year: '2024',
-      title: 'Frontend & Web Development',
+      title: 'Software Development',
       description:
-        'Built interactive web applications and developed strong proficiency in modern frontend frameworks.',
+        'Rapidly progressed from markup to programming — building logic-driven applications and learning core software engineering principles.',
+    },
+    {
+      year: '2024',
+      title: 'Data & AI Exploration',
+      description:
+        'Expanded into data analysis and artificial intelligence, discovering the power of data-driven decision making and machine learning.',
     },
     {
       year: '2025',
-      title: 'Data Science & Analytics',
+      title: 'Full-Stack & Systems Engineering',
       description:
-        'Shifted focus to data — learning statistical modeling, analysis pipelines, and data visualization.',
-    },
-    {
-      year: '2025',
-      title: 'AI & Machine Learning',
-      description:
-        'Dived deep into artificial intelligence, neural networks, and large language model applications.',
+        'Built production-grade web applications and software systems, deepening expertise in full-stack architecture and data analytics.',
     },
     {
       year: '2026',
-      title: 'Production Systems',
+      title: 'Aerospace Research Initiative',
       description:
-        'Now building end-to-end production-grade software systems with AI, data, and robust engineering at the core.',
+        'Joined a research team developing RC planes and drone systems — integrating hardware and software to advance autonomous flight research.',
     },
   ],
 
