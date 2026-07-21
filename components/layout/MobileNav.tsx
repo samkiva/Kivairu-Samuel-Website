@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { Drawer, IconButton, Logo } from '@/components/ui';
 import { MAIN_NAVIGATION } from '@/config/navigation';
@@ -10,6 +11,7 @@ import { cn } from '@/utils/cn';
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="md:hidden">
