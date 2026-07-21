@@ -2,3 +2,8 @@ export * from './Container';
 export * from './Section';
 export * from './SectionDescription';
 export * from './SectionHeading';
+export * from './DesktopNav';
+export * from './MobileNav';
+export * from './Navbar';
+export * from './Footer';
+export * from './PageWrapper';

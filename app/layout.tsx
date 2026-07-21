@@ -4,6 +4,7 @@ import './globals.css';
 import { cn } from '@/utils/cn';
 import { SEO_CONFIG } from '@/config/seo';
 import { AppProviders } from '@/components/providers/AppProviders';
+import { Navbar, Footer, PageWrapper } from '@/components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -54,9 +55,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn('min-h-screen bg-background text-foreground font-sans antialiased', inter.className)}>
+      <body className={cn('min-h-screen bg-background text-foreground font-sans antialiased flex flex-col', inter.className)}>
         <AppProviders>
-          {children}
+          <Navbar />
+          <PageWrapper>
+            {children}
+          </PageWrapper>
+          <Footer />
         </AppProviders>
       </body>
     </html>

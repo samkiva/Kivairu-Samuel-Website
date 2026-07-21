@@ -1,4 +1,9 @@
 export const getRevealVariants = () => ({
-  initial: { y: '100%' },
-  animate: { y: 0 },
+  initial: { opacity: 0, y: 75 },
+  animate: { opacity: 1, y: 0 },
+});
+
+export const getRevealOverlayVariants = () => ({
+  initial: { left: 0 },
+  animate: { left: '100%' },
 });

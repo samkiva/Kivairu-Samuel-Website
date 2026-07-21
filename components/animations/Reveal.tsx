@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { getRevealVariants } from '@/lib/motion';
+import { getRevealVariants, getRevealOverlayVariants } from '@/lib/motion';
 
 export interface RevealProps extends React.HTMLAttributes<HTMLDivElement> {
   delay?: number;
@@ -24,8 +24,9 @@ export const Reveal = React.forwardRef<HTMLDivElement, RevealProps>(
           {children}
         </motion.div>
         <motion.div
-          initial={{ left: 0 }}
-          whileInView={{ left: '100%' }}
+          variants={getRevealOverlayVariants()}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: 'easeIn', delay }}
           style={{
