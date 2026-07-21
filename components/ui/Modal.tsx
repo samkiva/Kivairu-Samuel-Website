@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
-import { ANIMATION_CONFIG, FADE_IN } from '@/config/animations';
+import { ANIMATION_CONFIG } from '@/config/animations';
 import { X } from 'lucide-react';
 import { IconButton } from './IconButton';
 import { useFocusTrap } from '@/hooks/useFocusTrap';

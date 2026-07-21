@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { Drawer, IconButton, Logo } from '@/components/ui';
 import { MAIN_NAVIGATION } from '@/config/navigation';
@@ -11,12 +10,6 @@ import { cn } from '@/utils/cn';
 
 export const MobileNav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const pathname = usePathname();
-
-  // Close drawer on route change
-  React.useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   return (
     <div className="md:hidden">
@@ -47,6 +40,7 @@ export const MobileNav = () => {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setIsOpen(false)}
                   className={cn(
                     'text-lg font-medium py-2 px-4 rounded-md transition-colors',
                     isActive

@@ -2,27 +2,26 @@
 
 import * as React from 'react';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, ArrowRight, Check, X, Info } from 'lucide-react';
+import { useMounted } from '@/hooks/useMounted';
+import { ArrowRight, Check, Info } from 'lucide-react';
 import { 
-  Container, Section, SectionHeading, SectionDescription 
+  Container, SectionHeading, SectionDescription 
 } from '@/components/layout';
 import { 
   Button, IconButton, Card, GlassCard, Badge, Chip, Tag, Input, Textarea, 
-  Label, Avatar, Divider, Tooltip, Modal, Drawer, Toast, 
+  Label, Divider, Tooltip, Modal, Drawer, Toast, 
   EmptyState, ErrorState, SuccessState, Typography, LoadingSpinner, LoadingDots, Skeleton 
 } from '@/components/ui';
 import { 
-  FadeIn, SlideUp, SlideLeft, SlideRight, ScaleIn, HoverScale, HoverLift, Floating, Reveal, StaggerContainer 
+  FadeIn, SlideUp, SlideLeft, SlideRight, ScaleIn, HoverScale, HoverLift, Floating, Reveal 
 } from '@/components/animations';
 import { toast } from 'sonner';
 
 export default function DesignSystemShowcase() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const { setTheme } = useTheme();
+  const mounted = useMounted();
   const [modalOpen, setModalOpen] = React.useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-
-  React.useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
@@ -81,7 +80,7 @@ export default function DesignSystemShowcase() {
           <SectionDescription>Text styles inherited from Inter standard definitions.</SectionDescription>
           
           <div className="space-y-4">
-            <Typography variant="display">Display Text</Typography>
+            <Typography variant="display">A highly polished design language for &quot;HexSentinel&quot;.</Typography>
             <Typography variant="h1">Heading 1</Typography>
             <Typography variant="h2">Heading 2</Typography>
             <Typography variant="h3">Heading 3</Typography>
@@ -92,7 +91,7 @@ export default function DesignSystemShowcase() {
             <Typography variant="small">Small - Dense UI elements.</Typography>
             <Typography variant="caption">Caption - Tiniest legal or meta text.</Typography>
             <Typography variant="gradient">Gradient Typography</Typography>
-            <Typography variant="monospace">console.log("Monospace code snippet");</Typography>
+            <Typography variant="monospace">console.log(&quot;Monospace code snippet&quot;);</Typography>
           </div>
         </section>
 

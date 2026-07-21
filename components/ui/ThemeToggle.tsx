@@ -5,14 +5,11 @@ import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
 import { IconButton } from './IconButton';
 import { Tooltip } from './Tooltip';
+import { useMounted } from '@/hooks/useMounted';
 
 export const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   if (!mounted) {
     return (

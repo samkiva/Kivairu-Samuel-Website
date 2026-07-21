@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { getRevealVariants, getRevealOverlayVariants } from '@/lib/motion';
 
 export interface RevealProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { cn } from '@/utils/cn';
 
-export interface SectionProps extends React.HTMLAttributes<HTMLElement> {}
+export type SectionProps = React.HTMLAttributes<HTMLElement>;
 
 export const Section = forwardRef<HTMLElement, SectionProps>(
   ({ className, children, ...props }, ref) => {

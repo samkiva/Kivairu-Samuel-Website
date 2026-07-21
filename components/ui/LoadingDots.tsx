@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cn } from '@/utils/cn';
 
-export interface LoadingDotsProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type LoadingDotsProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const LoadingDots = React.memo(
   React.forwardRef<HTMLDivElement, LoadingDotsProps>(

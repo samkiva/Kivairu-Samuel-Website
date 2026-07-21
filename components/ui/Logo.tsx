@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { cn } from '@/utils/cn';
 import { Typography } from './Typography';
 
-export interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+export type LogoProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
   ({ className, ...props }, ref) => {

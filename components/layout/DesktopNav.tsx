@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { MAIN_NAVIGATION } from '@/config/navigation';
 import { cn } from '@/utils/cn';
-import { Typography } from '@/components/ui';
 
 export const DesktopNav = () => {
   const pathname = usePathname();
