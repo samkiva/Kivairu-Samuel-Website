@@ -1,6 +1,6 @@
 # HexSentinel Portfolio
 
-A premium, high-performance personal website and digital headquarters for Sam Kivairu, an AI Engineer, Software Engineer, and Hardware Innovator.
+A premium, high-performance personal website and digital headquarters for Kivairu Samuel,a Statistician, Data Scientist, AI Engineer, Software Engineer, and Hardware Innovator.
 
 ## Tech Stack
 * **Framework**: Next.js (App Router)
@@ -59,4 +59,4 @@ npm run test
 (Tests configuration pending in later phases)
 
 ## License
-All rights reserved © Sam Kivairu
+All rights reserved © Kivairu Samuel 2026
