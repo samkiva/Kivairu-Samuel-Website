@@ -2,6 +2,7 @@ export interface ContactConfig {
   headline: string;
   subheadline: string;
   email: string;
+  phone: string;
   location: string;
   responseTime: string;
   socials: {
@@ -23,6 +24,7 @@ export const CONTACT_DATA: ContactConfig = {
   subheadline:
     "Whether you have a complex software engineering project, AI model integration, research initiative, or technical consulting inquiry, I'm ready to collaborate.",
   email: 'kivairusamuel9409@gmail.com',
+  phone: '+254 757 803 607',
   location: 'Nairobi, Kenya',
   responseTime: 'Typically responds within 24 hours',
   socials: {

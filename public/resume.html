@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kivairu Samuel — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1a2744;
+      --navy-mid:  #243255;
+      --accent:    #2563eb;
+      --accent-lt: #dbeafe;
+      --text:      #1e293b;
+      --muted:     #64748b;
+      --border:    #e2e8f0;
+      --bg-left:   #f0f4fb;
+      --white:     #ffffff;
+      --tag-bg:    #e8edf8;
+      --tag-text:  #1e3a8a;
+    }
+
+    html, body {
+      width: 210mm;
+      min-height: 297mm;
+      font-family: 'Inter', 'Calibri', sans-serif;
+      font-size: 9.2pt;
+      color: var(--text);
+      background: var(--white);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Page wrapper ─────────────────────────── */
+    .page {
+      display: flex;
+      flex-direction: column;
+      width: 210mm;
+      min-height: 297mm;
+    }
+
+    /* ── Header bar ───────────────────────────── */
+    .header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 28px 16px;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-name h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+    .header-name .titles {
+      font-size: 8.5pt;
+      font-weight: 400;
+      color: #93c5fd;
+      letter-spacing: 0.5px;
+      margin-top: 5px;
+    }
+    .header-contacts {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 4px 20px;
+      font-size: 7.8pt;
+      color: #cbd5e1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .header-contacts a { color: #93c5fd; text-decoration: none; }
+    .header-contacts a:hover { text-decoration: underline; }
+    .contact-item { display: flex; align-items: center; gap: 5px; }
+    .contact-item .icon { font-size: 8pt; opacity: 0.7; }
+
+    /* ── Body: two columns ─────────────────────── */
+    .body {
+      display: flex;
+      flex: 1;
+    }
+
+    /* LEFT COLUMN */
+    .left {
+      width: 34%;
+      background: var(--bg-left);
+      padding: 18px 16px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* RIGHT COLUMN */
+    .right {
+      width: 66%;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ── Section heading ──────────────────────── */
+    .section-title {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* ── Skills ───────────────────────────────── */
+    .skill-group { margin-bottom: 10px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-label {
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 6.8pt;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .tag.research {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    /* ── Education block ──────────────────────── */
+    .edu-block { margin-bottom: 10px; }
+    .edu-institution {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .edu-degree {
+      font-size: 7.8pt;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .edu-years {
+      font-size: 7pt;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .edu-sub {
+      font-size: 7pt;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ── Professional development ─────────────── */
+    .pd-block { margin-bottom: 6px; }
+    .pd-org {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .pd-prog {
+      font-size: 7.5pt;
+      color: var(--text);
+    }
+    .pd-list {
+      list-style: none;
+      margin-top: 4px;
+    }
+    .pd-list li {
+      font-size: 7pt;
+      color: var(--muted);
+      padding-left: 8px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .pd-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ── Languages ────────────────────────────── */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.5pt;
+      padding: 2px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-item:last-child { border-bottom: none; }
+    .lang-name { font-weight: 500; color: var(--text); }
+    .lang-level { color: var(--muted); font-size: 7pt; }
+
+    /* ── Summary ──────────────────────────────── */
+    .summary p {
+      font-size: 8.2pt;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    /* ── Experience ───────────────────────────── */
+    .exp-block { margin-bottom: 12px; }
+    .exp-block:last-child { margin-bottom: 0; }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .exp-role {
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .exp-date {
+      font-size: 7.2pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .exp-org {
+      font-size: 7.8pt;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+    .exp-bullets li {
+      font-size: 7.8pt;
+      line-height: 1.55;
+      color: var(--text);
+      padding-left: 10px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 7pt;
+    }
+
+    /* ── Projects ─────────────────────────────── */
+    .proj-block { margin-bottom: 10px; }
+    .proj-block:last-child { margin-bottom: 0; }
+    .proj-name {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .proj-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .proj-bullets li {
+      font-size: 7.5pt;
+      line-height: 1.5;
+      color: var(--text);
+      padding-left: 10px;
+      position: relative;
+    }
+    .proj-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 6.5pt;
+    }
+
+    /* ── Achievements ─────────────────────────── */
+    .ach-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .ach-list li {
+      font-size: 7.8pt;
+      line-height: 1.55;
+      color: var(--text);
+      padding-left: 10px;
+      position: relative;
+    }
+    .ach-list li::before {
+      content: '★';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 6.5pt;
+      top: 1px;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    .footer {
+      background: var(--navy);
+      color: #94a3b8;
+      font-size: 6.8pt;
+      text-align: center;
+      padding: 7px 28px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Print rules ──────────────────────────── */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    @media print {
+      html, body { width: 210mm; height: 297mm; }
+      .page { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="header">
+    <div class="header-top">
+      <div class="header-name">
+        <h1>Kivairu Samuel</h1>
+        <div class="titles">AI Engineer &nbsp;•&nbsp; Software Developer &nbsp;•&nbsp; Data Analyst &nbsp;•&nbsp; Embedded Systems Researcher</div>
+      </div>
+      <div class="header-contacts">
+        <div class="contact-item"><span class="icon">📍</span> Nairobi, Kenya</div>
+        <div class="contact-item"><span class="icon">🔗</span> <a href="https://kivairu-samuel.vercel.app">kivairu-samuel.vercel.app</a></div>
+        <div class="contact-item"><span class="icon">📞</span> +254 757 803 607</div>
+        <div class="contact-item"><span class="icon">🐙</span> <a href="https://github.com/samkiva">github.com/samkiva</a></div>
+        <div class="contact-item"><span class="icon">✉️</span> <a href="mailto:kivairusamuel9409@gmail.com">kivairusamuel9409@gmail.com</a></div>
+        <div class="contact-item"><span class="icon">💼</span> <a href="https://www.linkedin.com/in/samuel-kivairu">linkedin.com/in/samuel-kivairu</a></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════ BODY ════════════════════════ -->
+  <div class="body">
+
+    <!-- ════════════ LEFT COLUMN ════════════ -->
+    <aside class="left">
+
+      <!-- SKILLS -->
+      <section>
+        <div class="section-title">Technical Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-label">Programming</div>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">C / C++</span>
+            <span class="tag">SQL</span>
+            <span class="tag">R</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Frontend</div>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Framer Motion</span>
+            <span class="tag">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Backend &amp; APIs</div>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">AI &amp; Data</div>
+          <div class="tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Scikit-Learn</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">Statistical Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Embedded Systems</div>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">STM32</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">PlatformIO</span>
+            <span class="tag">I2C / SPI / UART</span>
+            <span class="tag">PWM Control</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Currently Researching</div>
+          <div class="tags">
+            <span class="tag research">ROS2</span>
+            <span class="tag research">PX4 Autopilot</span>
+            <span class="tag research">TinyML</span>
+            <span class="tag research">Edge AI</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Tools</div>
+          <div class="tags">
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Vercel</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <div class="section-title">Education</div>
+        <div class="edu-block">
+          <div class="edu-institution">University of Nairobi</div>
+          <div class="edu-degree">BSc Statistics</div>
+          <div class="edu-years">2024 – Expected 2028</div>
+          <div class="edu-sub">Statistical Modelling · Machine Learning · Data Science · Probability · Research Methods</div>
+        </div>
+      </section>
+
+      <!-- PROFESSIONAL DEVELOPMENT -->
+      <section>
+        <div class="section-title">Professional Development</div>
+        <div class="pd-block">
+          <div class="pd-org">Power Learn Project (PLP)</div>
+          <div class="pd-prog">Software Development Program</div>
+          <ul class="pd-list">
+            <li>Python Programming</li>
+            <li>Web Development</li>
+            <li>Database Design</li>
+            <li>Software Engineering Principles</li>
+            <li>Startup &amp; Professional Development</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LANGUAGES -->
+      <section>
+        <div class="section-title">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Proficient</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Kiswahili</span>
+          <span class="lang-level">Native</span>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- ════════════ RIGHT COLUMN ════════════ -->
+    <main class="right">
+
+      <!-- PROFESSIONAL SUMMARY -->
+      <section class="summary">
+        <div class="section-title">Professional Summary</div>
+        <p>
+          Statistics undergraduate at the University of Nairobi with hands-on experience in AI engineering, full-stack software development, embedded systems, and data analytics. Passionate about building intelligent software, autonomous systems, and data-driven solutions that solve real-world problems. Combines academic statistical foundations with practical engineering skills — designing and shipping production-grade web applications, predictive ML pipelines, and real-time telemetry firmware for autonomous aerospace research.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section>
+        <div class="section-title">Experience</div>
+
+        <div class="exp-block">
+          <div class="exp-header">
+            <div class="exp-role">Hardware &amp; Systems Lead</div>
+            <div class="exp-date">2025 – Present</div>
+          </div>
+          <div class="exp-org">Aerospace System Research Initiative · Nairobi, Kenya</div>
+          <ul class="exp-bullets">
+            <li>Researching embedded firmware for autonomous aerospace applications using ESP32 and STM32 microcontrollers.</li>
+            <li>Developing real-time telemetry payloads with sub-GHz radio transceivers, I2C IMU sensor fusion, and PWM motor control.</li>
+            <li>Designing fail-safe circuit isolation between flight electronics and propulsion systems.</li>
+            <li>Building a serial UART ground-station receiver streaming live altitude, heading, and pitch/roll telemetry data.</li>
+          </ul>
+        </div>
+
+        <div class="exp-block">
+          <div class="exp-header">
+            <div class="exp-role">Full-Stack &amp; AI Developer</div>
+            <div class="exp-date">2024 – Present</div>
+          </div>
+          <div class="exp-org">Personal Engineering Projects · Remote</div>
+          <ul class="exp-bullets">
+            <li>Designing and shipping AI-powered web applications using React, Next.js 16, TypeScript, and Firebase.</li>
+            <li>Applying statistical modelling and supervised ML to real-world healthcare and agricultural datasets.</li>
+            <li>Architecting server-first RSC applications with full WCAG 2.2 AA accessibility and 100/100 Lighthouse scores.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section>
+        <div class="section-title">Featured Projects</div>
+
+        <div class="proj-block">
+          <div class="proj-name">Disease Prediction &amp; Forecasting AI</div>
+          <ul class="proj-bullets">
+            <li>End-to-end ML pipeline achieving <strong>94.2% ROC-AUC</strong> using XGBoost and SMOTE on imbalanced clinical data.</li>
+            <li>FastAPI REST microservice delivering real-time patient risk inference with sub-50ms latency.</li>
+            <li>SHAP feature importance visualisations for clinical model interpretability.</li>
+            <li><em>Stack: Python · XGBoost · Scikit-Learn · FastAPI · Pandas · SHAP</em></li>
+          </ul>
+        </div>
+
+        <div class="proj-block">
+          <div class="proj-name">AgriNova AI Platform</div>
+          <ul class="proj-bullets">
+            <li>Multi-class CNN classifying 15+ plant leaf pathologies; model quantized 142MB → 18MB TFLite (87% reduction) for mobile.</li>
+            <li>Soil N-P-K fertilizer recommendation engine paired with a responsive Next.js analytics dashboard.</li>
+            <li><em>Stack: Python · TensorFlow · Next.js · PostgreSQL · Tailwind CSS · Docker</em></li>
+          </ul>
+        </div>
+
+        <div class="proj-block">
+          <div class="proj-name">Portfolio Platform · <a href="https://kivairu-samuel.vercel.app" style="color:var(--accent);font-weight:400;font-size:7.5pt;">kivairu-samuel.vercel.app</a></div>
+          <ul class="proj-bullets">
+            <li>Production-grade portfolio — 100/100 Lighthouse score, 0.00 CLS, 88%+ server-rendered RSC architecture.</li>
+            <li>Custom Framer Motion animation system, centralized design tokens, WCAG 2.2 AA accessibility.</li>
+            <li><em>Stack: Next.js 16 · React 19 · TypeScript · Tailwind v4 · Framer Motion</em></li>
+          </ul>
+        </div>
+
+        <div class="proj-block">
+          <div class="proj-name">Autonomous Flight Controller Firmware</div>
+          <ul class="proj-bullets">
+            <li>Bare-metal C++ firmware running a <strong>500Hz deterministic control loop</strong> (1.2ms / 2.0ms budget).</li>
+            <li>Real-time IMU sensor fusion (MPU6050), PID corrections, auto-zero gyro calibration, and serial telemetry.</li>
+            <li><em>Stack: C/C++ · Arduino / PlatformIO · Microcontrollers · PWM · Serial Comms</em></li>
+          </ul>
+        </div>
+
+        <div class="proj-block">
+          <div class="proj-name">Healthcare Data Analytics Platform</div>
+          <ul class="proj-bullets">
+            <li>Vectorized Pandas pipeline processing 100,000+ patient records — <strong>75% faster</strong> vs. iterative approach.</li>
+            <li>Interactive cohort dashboards (ICU occupancy heatmap, length-of-stay correlation matrix, PDF exports).</li>
+            <li><em>Stack: Python · Pandas · SQL · Recharts · TypeScript · Next.js</em></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section>
+        <div class="section-title">Achievements</div>
+        <ul class="ach-list">
+          <li>Shipped a production-grade Next.js 16 engineering portfolio with 100/100 Lighthouse across all four categories.</li>
+          <li>Built and deployed a medical ML pipeline achieving 94.2% ROC-AUC with SHAP interpretability for clinical use.</li>
+          <li>Participated in AI hackathons tackling real-world healthcare and agricultural problems.</li>
+          <li>Actively researching autonomous flight systems and embedded aerospace technologies.</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    References available upon request &nbsp;·&nbsp; kivairusamuel9409@gmail.com &nbsp;·&nbsp; +254 757 803 607 &nbsp;·&nbsp; github.com/samkiva
+  </footer>
+
+</div>
+</body>
+</html>

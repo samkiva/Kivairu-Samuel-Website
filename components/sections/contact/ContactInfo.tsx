@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GlassCard } from '@/components/ui';
-import { Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowUpRight } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { CONTACT_DATA } from '@/data/contact';
 
@@ -32,6 +32,24 @@ export const ContactInfo = () => {
               </span>
               <span className="font-mono text-xs md:text-sm text-foreground group-hover:text-primary transition-colors truncate block">
                 {CONTACT_DATA.email}
+              </span>
+            </div>
+          </a>
+
+          {/* Phone Number */}
+          <a
+            href={`tel:${CONTACT_DATA.phone.replace(/\s+/g, '')}`}
+            className="flex items-start gap-3.5 p-3 rounded-2xl bg-muted/20 border border-border/30 hover:border-primary/40 hover:bg-primary/5 transition-all group"
+          >
+            <div className="p-2.5 rounded-xl bg-primary/10 text-primary mt-0.5">
+              <Phone className="w-4 h-4" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <span className="text-[11px] uppercase font-semibold text-muted-foreground tracking-wider block">
+                Phone Number
+              </span>
+              <span className="font-mono text-xs md:text-sm text-foreground group-hover:text-primary transition-colors truncate block">
+                {CONTACT_DATA.phone}
               </span>
             </div>
           </a>
