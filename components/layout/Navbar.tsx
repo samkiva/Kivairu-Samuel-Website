@@ -32,13 +32,13 @@ export const Navbar = () => {
           <Logo />
           <DesktopNav />
         </div>
-        
+
         <div className="flex items-center gap-2 md:gap-4">
           <ThemeToggle />
           <div className="hidden md:block">
-            <a 
-              href="/resume.pdf" 
-              target="_blank" 
+            <a
+              href="/resume.pdf"
+              target="_blank"
               rel="noopener noreferrer"
               className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
             >
