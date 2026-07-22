@@ -6,13 +6,15 @@ import { GlassCard } from '@/components/ui';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Button } from '@/components/ui/Button';
-import { Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 
 interface FormState {
   name: string;
   email: string;
   subject: string;
   message: string;
+  honeypot: string;
 }
 
 interface FormErrors {
@@ -20,6 +22,7 @@ interface FormErrors {
   email?: string;
   subject?: string;
   message?: string;
+  server?: string;
 }
 
 export const ContactForm = () => {
@@ -28,6 +31,7 @@ export const ContactForm = () => {
     email: '',
     subject: '',
     message: '',
+    honeypot: '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -73,13 +77,30 @@ export const ContactForm = () => {
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setErrors({});
 
-    // Simulate async submission architected for future email API integration
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit inquiry.');
+      }
+
+      trackEvent('contact_submission', { subject: formData.subject });
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'An error occurred during submission.';
+      setErrors((prev) => ({ ...prev, server: msg }));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -91,7 +112,7 @@ export const ContactForm = () => {
           </div>
           <h4 className="text-2xl font-bold text-foreground">Message Sent Successfully!</h4>
           <p className="text-sm text-muted-foreground max-w-md">
-            Thank you for reaching out. Your message has been logged and I will respond to your inquiry within 24 hours.
+            Thank you for reaching out. Your message has been received and logged. I will respond to your inquiry within 24 hours.
           </p>
           <Button
             variant="outline"
@@ -111,6 +132,25 @@ export const ContactForm = () => {
             <p className="text-xs text-muted-foreground">
               Fill out the form below and I will get back to you promptly.
             </p>
+          </div>
+
+          {errors.server && (
+            <div className="p-3 rounded-xl bg-error/10 border border-error/20 text-error text-xs flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0" />
+              <span>{errors.server}</span>
+            </div>
+          )}
+
+          {/* Honeypot field (hidden from users) */}
+          <div className="hidden" aria-hidden="true">
+            <input
+              type="text"
+              name="honeypot"
+              tabIndex={-1}
+              value={formData.honeypot}
+              onChange={handleChange}
+              autoComplete="off"
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

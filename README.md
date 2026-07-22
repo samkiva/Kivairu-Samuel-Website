@@ -1,62 +1,139 @@
-# HexSentinel Portfolio
+# Kivairu Samuel — Portfolio & Engineering Platform
 
-A premium, high-performance personal website and digital headquarters for Kivairu Samuel,a Statistician, Data Scientist, AI Engineer, Software Engineer, and Hardware Innovator.
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-cyan?logo=tailwindcss)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Tech Stack
-* **Framework**: Next.js (App Router)
-* **Language**: TypeScript (Strict)
-* **Styling**: Tailwind CSS v4
-* **Animations**: Framer Motion
-* **Icons**: Lucide React / React Icons
-* **Package Manager**: npm
+> The official digital headquarters and portfolio platform for **Kivairu Samuel** — AI Engineer, Software Developer, Data Analyst, and Embedded Systems Innovator based in Nairobi, Kenya.
 
-## Architecture Overview
-This project strictly adheres to a predefined **Engineering Constitution**, ensuring modularity, scalability, and performance.
-Key principles include:
-- Separation of Concerns (UI vs Data)
-- Server-First Components
-- Single Responsibility Principle (SRP)
-- Strict TypeScript constraints
+---
 
-## Folder Structure
+## 🌟 Key Features
+
+- **Server-First Architecture**: 88%+ of all UI components render as pure React Server Components (RSC) for instantaneous page loads and minimal JavaScript bundle footprint.
+- **Capability-Based Skills Engine**: Groups technical expertise into actionable engineering capabilities rather than unhelpful progress bars.
+- **Detailed Engineering Case Studies**: Interactive case study modals detailing Problem Statements, Architectural Solutions, Lessons Learned, and Technical Roadmaps for 6 signature projects.
+- **Embedded & Aerospace Spotlight**: Prominently highlights hardware firmware development (ESP32/STM32) and the **Aerospace System Research Initiative**.
+- **Scroll-Spy Section Navigation**: Dynamic `IntersectionObserver` active tab highlighting across all 7 home sections.
+- **Production-Ready Contact Handler**: Server-side API handler (`app/api/contact/route.ts`) featuring Zod-style validation, honeypot spam protection, and Resend email service integration.
+- **Accessibility & SEO Excellence**: Screen-reader skip-to-content links, keyboard focus management, Schema.org `Person` JSON-LD structured data, dynamic sitemap, robots, and webmanifest.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript (Strict Mode) |
+| **Styling** | Tailwind CSS v4 + Vanilla CSS Variables |
+| **Animation System** | Framer Motion (Centralized Motion Wrappers) |
+| **Icons** | Lucide React + React Icons |
+| **Email API** | Resend API |
+| **Analytics** | Vercel Analytics + GA4 / Clarity Event Tracker |
+| **Deployment** | Vercel Platform |
+
+---
+
+## 📁 Repository Architecture
+
+```text
+├── app/                        # Next.js App Router routes & layouts
+│   ├── api/contact/route.ts    # Contact form API backend handler
+│   ├── privacy/page.tsx        # Privacy policy page
+│   ├── terms/page.tsx          # Terms of service page
+│   ├── not-found.tsx           # Custom 404 error page
+│   ├── layout.tsx              # Root layout & global metadata
+│   ├── page.tsx                # Homepage section orchestrator
+│   ├── robots.ts               # Dynamic robots.txt
+│   ├── sitemap.ts              # Dynamic sitemap.xml
+│   └── manifest.ts             # Web Application Manifest
+├── components/                 # React UI & Section Components
+│   ├── animations/             # Reusable motion wrappers (SlideUp, HoverLift, etc.)
+│   ├── layout/                 # Container, Section, Navbar, Footer, DesktopNav
+│   ├── ui/                     # GlassCard, Badge, Button, Input, Textarea, Modal
+│   └── sections/               # Feature modules (hero, about, skills, services, projects, experience, contact)
+├── config/                     # Centralized configuration (SEO, navigation, socials, theme)
+├── data/                       # Strongly typed data layers (about.ts, skills.ts, projects.ts, etc.)
+├── lib/                        # Utility libraries & analytics trackers
+└── public/                     # Static media assets & resume.pdf
 ```
-/
-├── app/                  # Next.js pages and API routes
-├── components/           # React Components
-│   ├── animations/       # Reusable Framer Motion wrappers
-│   ├── layout/           # Structural components (Nav, Footer)
-│   ├── sections/         # Page sections
-│   └── ui/               # Granular design system components
-├── constants/            # Global constant values and config
-├── data/                 # Content separated from UI
-├── hooks/                # Custom React hooks
-├── lib/                  # Third-party library initializations
-├── public/               # Static assets
-├── styles/               # CSS modules and variables
-├── types/                # TypeScript definitions
-└── utils/                # Pure helper functions (e.g., tailwind merger)
-```
 
-## Development
-1. Clone the repository.
-2. Install dependencies:
+---
+
+## 🚀 Getting Started Locally
+
+### Prerequisites
+- Node.js 18.x or higher
+- npm 9.x or higher
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/samkiva/Kivairu-Samuel-Website.git
+   cd Kivairu-Samuel-Website
+   ```
+
+2. **Install dependencies**:
    ```bash
    npm install
    ```
-3. Copy `.env.example` to `.env.local` and add necessary variables.
-4. Run the development server:
+
+3. **Set up Environment Variables**:
+   Copy `.env.example` to `.env.local`:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Add your Resend API Key:
+   ```env
+   RESEND_API_KEY=re_123456789...
+   NEXT_PUBLIC_APP_URL=https://kivairusamuel.com
+   ```
+
+4. **Run the local development server**:
    ```bash
    npm run dev
    ```
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Testing
-This project utilizes Vitest and React Testing Library.
-Run tests using:
+---
+
+## 🧪 Production Build & Quality Validation
+
+Run the full validation suite:
+
 ```bash
-npm run test
-```
-(Tests configuration pending in later phases)
+# 1. Run ESLint
+npm run lint
 
-## License
-All rights reserved © Kivairu Samuel 2026
+# 2. Run TypeScript strict type check
+npx tsc --noEmit
+
+# 3. Build optimized production bundle
+npm run build
+```
+
+---
+
+## ☁️ Deployment (Vercel)
+
+The repository is configured for one-click deployment on Vercel:
+
+1. Import your GitHub repository to [Vercel](https://vercel.com).
+2. Set Environment Variables:
+   - `RESEND_API_KEY`: Your Resend secret key.
+   - `NEXT_PUBLIC_APP_URL`: Production domain URL.
+3. Deploy! Vercel will automatically build static pages and serverless API handlers.
+
+---
+
+## 📄 License
+
+This repository is open-sourced under the **MIT License**. Feel free to inspect the architecture and adapt the design system for your own projects.
+
+---
+
+**Built with precision & passion by Kivairu Samuel.**
