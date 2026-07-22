@@ -4,6 +4,7 @@ export const MAIN_NAVIGATION: NavigationItem[] = [
   { title: 'Home', href: '/' },
   { title: 'About', href: '#about' },
   { title: 'Skills', href: '#skills' },
+  { title: 'Services', href: '#services' },
   { title: 'Projects', href: '#projects' },
   { title: 'Experience', href: '#experience' },
   { title: 'Contact', href: '#contact' },

@@ -15,7 +15,7 @@ export const DesktopNav = () => {
   useEffect(() => {
     if (pathname !== '/') return;
 
-    const sectionIds = ['hero', 'about', 'skills', 'projects', 'experience', 'contact'];
+    const sectionIds = ['hero', 'about', 'skills', 'services', 'projects', 'experience', 'contact'];
     const sectionElements = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
