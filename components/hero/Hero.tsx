@@ -7,7 +7,7 @@ import { HERO_DATA } from '@/data/hero';
 
 export const Hero = () => {
   return (
-    <Section className="relative min-h-[90vh] flex items-center pt-20 md:pt-32 pb-16 overflow-hidden">
+    <Section id="hero" className="relative min-h-[90vh] flex items-center pt-20 md:pt-32 pb-16 overflow-hidden">
       <HeroBackground />
       
       <Container className="relative z-10">

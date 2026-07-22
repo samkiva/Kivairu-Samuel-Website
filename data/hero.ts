@@ -19,7 +19,7 @@ export const HERO_DATA: HeroConfig = {
   headline: 'Engineering Intelligent Systems That Solve Real Problems.',
   roles: ['AI Engineer', 'Software Developer', 'Data Analyst'],
   description:
-    'A concise paragraph introducing Kivairu Samuel as someone building secure, intelligent, scalable technology with a focus on solving meaningful problems. Bridging the gap between cutting-edge AI research and robust production systems.',
+    'Engineering intelligent, scalable technology with a focus on solving meaningful problems. Bridging the gap between cutting-edge AI research, full-stack software development, and embedded hardware systems.',
   availability: 'Open to Opportunities',
   cta: {
     primary: {
