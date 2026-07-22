@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll } from 'framer-motion';
 import { Logo, ThemeToggle } from '@/components/ui';
 import { buttonVariants } from '@/components/ui/Button';
 import { DesktopNav } from './DesktopNav';
@@ -10,35 +10,22 @@ import { cn } from '@/utils/cn';
 
 export const Navbar = () => {
   const { scrollY } = useScroll();
-  
-  // Create a blurred, slightly transparent background as we scroll
-  const background = useTransform(
-    scrollY,
-    [0, 50],
-    ['rgba(var(--background), 0)', 'rgba(var(--background), 0.8)']
-  );
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
-  const border = useTransform(
-    scrollY,
-    [0, 50],
-    ['1px solid rgba(var(--border), 0)', '1px solid rgba(var(--border), 0.5)']
-  );
-
-  const backdropFilter = useTransform(
-    scrollY,
-    [0, 50],
-    ['blur(0px)', 'blur(12px)']
-  );
+  React.useEffect(() => {
+    return scrollY.on('change', (latest) => {
+      setIsScrolled(latest > 20);
+    });
+  }, [scrollY]);
 
   return (
-    <motion.header
-      className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
-      style={{
-        background,
-        borderBottom: border,
-        backdropFilter,
-        WebkitBackdropFilter: backdropFilter,
-      }}
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
+        isScrolled
+          ? 'bg-background/85 backdrop-blur-md border-b border-border/60 shadow-xs'
+          : 'bg-transparent border-b border-transparent'
+      )}
     >
       <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
@@ -61,6 +48,6 @@ export const Navbar = () => {
           <MobileNav />
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 };

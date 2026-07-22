@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="50%" stop-color="#052e16"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Leaf / Vision bounding box graphics -->
+  <rect x="300" y="125" width="200" height="200" rx="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M 400 150 C 350 200, 350 270, 400 290 C 450 270, 450 200, 400 150 Z" fill="#4ade80" opacity="0.3" stroke="#4ade80" stroke-width="2"/>
+  <circle cx="300" cy="125" r="4" fill="#22c55e"/>
+  <circle cx="500" cy="125" r="4" fill="#22c55e"/>
+  <circle cx="300" cy="325" r="4" fill="#22c55e"/>
+  <circle cx="500" cy="325" r="4" fill="#22c55e"/>
+  <text x="400" y="380" text-anchor="middle" fill="#f0fdf4" font-family="system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="2">AGRINOVA AI PLATFORM</text>
+  <text x="400" y="405" text-anchor="middle" fill="#4ade80" font-family="monospace" font-size="14">CROP DIAGNOSTICS &amp; YIELD ANALYTICS</text>
+</svg>

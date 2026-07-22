@@ -41,7 +41,7 @@ export const HeroBackground = () => {
       />
       
       {/* Radial vignette for depth — pure CSS, no external dependencies */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--background))_100%)] opacity-60" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--background)_100%)] opacity-70" />
     </div>
   );
 };

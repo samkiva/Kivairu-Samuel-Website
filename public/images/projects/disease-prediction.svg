@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="50%" stop-color="#022c22"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- AI Neural / Bio Wave graphics -->
+  <path d="M 100 225 Q 250 100, 400 225 T 700 225" fill="none" stroke="#10b981" stroke-width="3" opacity="0.8"/>
+  <path d="M 100 225 Q 250 350, 400 225 T 700 225" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.6"/>
+  <!-- Nodes -->
+  <circle cx="250" cy="162" r="8" fill="#34d399"/>
+  <circle cx="400" cy="225" r="10" fill="#06b6d4"/>
+  <circle cx="550" cy="287" r="8" fill="#10b981"/>
+  <!-- Pulse lines -->
+  <path d="M 320 225 L 340 180 L 360 260 L 380 200 L 400 225" fill="none" stroke="#34d399" stroke-width="3"/>
+  <text x="400" y="380" text-anchor="middle" fill="#ecfdf5" font-family="system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="2">DISEASE PREDICTION AI</text>
+  <text x="400" y="405" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="14">CLINICAL PREDICTIVE MODELING PIPELINE</text>
+</svg>

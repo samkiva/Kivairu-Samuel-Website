@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- UI Browser Window Wireframe -->
+  <rect x="220" y="100" width="360" height="220" rx="12" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+  <circle cx="245" cy="120" r="4" fill="#ef4444"/>
+  <circle cx="260" cy="120" r="4" fill="#f59e0b"/>
+  <circle cx="275" cy="120" r="4" fill="#10b981"/>
+  <line x1="220" y1="135" x2="580" y2="135" stroke="#4338ca" stroke-width="1"/>
+  <!-- Code lines graphic -->
+  <rect x="245" y="155" width="120" height="10" rx="3" fill="#818cf8"/>
+  <rect x="245" y="175" width="180" height="8" rx="2" fill="#4338ca"/>
+  <rect x="245" y="190" width="150" height="8" rx="2" fill="#6366f1"/>
+  <rect x="245" y="210" width="220" height="60" rx="6" fill="#312e81" stroke="#6366f1" stroke-width="1"/>
+  <text x="400" y="380" text-anchor="middle" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="2">KIVAIRU SAMUEL PORTFOLIO</text>
+  <text x="400" y="405" text-anchor="middle" fill="#818cf8" font-family="monospace" font-size="14">NEXT.JS 16 &amp; TAILWIND V4 PLATFORM</text>
+</svg>
