@@ -2,10 +2,11 @@ import { NavigationItem } from '@/types';
 
 export const MAIN_NAVIGATION: NavigationItem[] = [
   { title: 'Home', href: '/' },
-  { title: 'About', href: '/about' },
-  { title: 'Projects', href: '/projects' },
-  { title: 'Skills', href: '/skills' },
-  { title: 'Contact', href: '/contact' },
+  { title: 'About', href: '#about' },
+  { title: 'Skills', href: '#skills' },
+  { title: 'Projects', href: '#projects' },
+  { title: 'Experience', href: '#experience' },
+  { title: 'Contact', href: '#contact' },
 ];
 
 export const FOOTER_NAVIGATION: NavigationItem[] = [
