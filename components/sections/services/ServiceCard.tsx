@@ -12,7 +12,7 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ service }: ServiceCardProps) => {
   return (
-    <HoverLift y={-6}>
+    <HoverLift yOffset={-6}>
       <GlassCard className="h-full p-6 md:p-8 rounded-3xl border-white/10 dark:border-white/5 flex flex-col justify-between relative overflow-hidden group hover:border-primary/40 transition-colors">
         {/* Glow backdrop on hover */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all pointer-events-none" />
@@ -25,7 +25,7 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
             </div>
 
             {service.featured && (
-              <Badge variant="primary" className="text-[10px] uppercase font-mono tracking-wider">
+              <Badge variant="default" className="text-[10px] uppercase font-mono tracking-wider">
                 Core Capability
               </Badge>
             )}

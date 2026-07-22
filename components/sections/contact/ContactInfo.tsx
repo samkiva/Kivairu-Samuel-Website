@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { GlassCard } from '@/components/ui';
-import { Mail, MapPin, Clock, Github, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { CONTACT_DATA } from '@/data/contact';
 
 export const ContactInfo = () => {
@@ -80,7 +81,7 @@ export const ContactInfo = () => {
             className="flex items-center justify-between p-3 rounded-xl bg-muted/30 border border-border/30 hover:border-primary/40 text-xs font-medium text-foreground hover:text-primary transition-all group"
           >
             <div className="flex items-center gap-2">
-              <Github className="w-4 h-4" />
+              <FaGithub className="w-4 h-4" />
               <span>GitHub</span>
             </div>
             <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
@@ -93,7 +94,7 @@ export const ContactInfo = () => {
             className="flex items-center justify-between p-3 rounded-xl bg-muted/30 border border-border/30 hover:border-primary/40 text-xs font-medium text-foreground hover:text-primary transition-all group"
           >
             <div className="flex items-center gap-2">
-              <Linkedin className="w-4 h-4 text-accent" />
+              <FaLinkedin className="w-4 h-4 text-accent" />
               <span>LinkedIn</span>
             </div>
             <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />

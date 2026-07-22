@@ -6,7 +6,7 @@ import { GlassCard } from '@/components/ui';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Button } from '@/components/ui/Button';
-import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 interface FormState {
   name: string;
@@ -127,10 +127,11 @@ export const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                error={errors.name}
+                error={Boolean(errors.name)}
                 aria-required="true"
                 aria-invalid={errors.name ? 'true' : 'false'}
               />
+              {errors.name && <p className="text-xs text-error mt-1">{errors.name}</p>}
             </div>
 
             {/* Email */}
@@ -146,10 +147,11 @@ export const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                error={errors.email}
+                error={Boolean(errors.email)}
                 aria-required="true"
                 aria-invalid={errors.email ? 'true' : 'false'}
               />
+              {errors.email && <p className="text-xs text-error mt-1">{errors.email}</p>}
             </div>
           </div>
 
@@ -166,10 +168,11 @@ export const ContactForm = () => {
               value={formData.subject}
               onChange={handleChange}
               disabled={isSubmitting}
-              error={errors.subject}
+              error={Boolean(errors.subject)}
               aria-required="true"
               aria-invalid={errors.subject ? 'true' : 'false'}
             />
+            {errors.subject && <p className="text-xs text-error mt-1">{errors.subject}</p>}
           </div>
 
           {/* Message */}
@@ -185,10 +188,11 @@ export const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               disabled={isSubmitting}
-              error={errors.message}
+              error={Boolean(errors.message)}
               aria-required="true"
               aria-invalid={errors.message ? 'true' : 'false'}
             />
+            {errors.message && <p className="text-xs text-error mt-1">{errors.message}</p>}
           </div>
 
           {/* Submit Button */}
