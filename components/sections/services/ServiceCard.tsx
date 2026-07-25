@@ -7,7 +7,8 @@ import { HoverLift } from '@/components/animations';
 import { ServiceItem } from '@/data/services';
 import { SkillIcon } from '@/components/sections/skills/SkillIcon';
 
-// Apple HIG-compliant spring: critically damped, no overshoot
+// Apple HIG-compliant spring: critically damped, no overshoot, no bounce.
+// stiffness:120 damping:26 matches Apple's motion timing principles.
 const CARD_SPRING = {
   type: 'spring',
   stiffness: 120,
@@ -20,24 +21,29 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard = ({ service }: ServiceCardProps) => {
+  // Stable id derived from the service id — ties aria-labelledby to the h3.
+  const headingId = `service-heading-${service.id}`;
+
   return (
-    // HoverLift receives an Apple-compliant spring override via the transition prop
+    // HoverLift transition prop overrides ANIMATION_CONFIG.transition because
+    // {...props} is spread after transition={ANIMATION_CONFIG.transition} in HoverLift.tsx.
     <HoverLift yOffset={-6} transition={CARD_SPRING} className="h-full">
       {/*
-       * GlassCard rendered as <article> via the Card `as` prop.
-       * Each service is an independent, self-contained content unit — article is correct.
-       * Not a <button> or <a> because these cards are informational, not interactive.
-       * The ArrowUpRight affordance has been removed to eliminate the broken click signal.
+       * Rendered as <article> via Card's `as` prop.
+       * Each service is a self-contained informational unit — article is semantically correct.
+       * aria-labelledby points to the visible <h3> inside the article.
+       * This is preferred over aria-label because it avoids announcing the title twice
+       * on screen readers that read both the aria-label and the heading content.
        */}
       <GlassCard
         as="article"
-        aria-label={service.title}
+        aria-labelledby={headingId}
         className="h-full p-6 md:p-8 rounded-3xl border-white/10 dark:border-white/5 flex flex-col justify-between relative overflow-hidden group hover:border-primary/40 transition-colors"
       >
         {/*
-         * Glow backdrop — static blur, only opacity is animated.
-         * Animating blur triggers paint-layer recalculation on every frame.
-         * Animating opacity is GPU-composited and cost-free.
+         * Glow backdrop — blur is static, only opacity animates.
+         * Animating blur forces the browser to recalculate the filter on every frame
+         * (paint-layer operation, not GPU-composited). Animating opacity is composited.
          */}
         <div
           aria-hidden="true"
@@ -48,8 +54,8 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
           {/* Icon row + featured badge */}
           <div className="flex items-center justify-between">
             {/*
-             * Icon container is purely decorative.
-             * SkillIcon already sets aria-hidden="true" internally.
+             * Decorative icon container — aria-hidden prevents double-announcement
+             * since SkillIcon already sets aria-hidden="true" on the SVG.
              */}
             <div
               className="p-3 rounded-2xl bg-primary/10 border border-primary/20 text-primary"
@@ -71,11 +77,14 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
           {/* Title and description */}
           <div className="space-y-2">
             {/*
-             * Plain h3 — no icon inside the heading.
-             * Icons inside headings pollute the accessible name announced by screen readers.
-             * The hover color change alone communicates engagement.
+             * id matches the aria-labelledby on the <article>.
+             * No icon inside the heading — icons in headings pollute accessible names.
+             * Color change on hover communicates engagement without a broken affordance.
              */}
-            <h3 className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+            <h3
+              id={headingId}
+              className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors"
+            >
               {service.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -91,7 +100,11 @@ export const ServiceCard = ({ service }: ServiceCardProps) => {
             <span className="text-xs font-semibold text-foreground/80 uppercase tracking-wider block">
               Key Technologies
             </span>
-            <div className="flex flex-wrap gap-1.5" role="list" aria-label={`Technologies for ${service.title}`}>
+            <div
+              className="flex flex-wrap gap-1.5"
+              role="list"
+              aria-label={`Technologies for ${service.title}`}
+            >
               {service.technologies.map((tech) => (
                 <Badge
                   key={tech}

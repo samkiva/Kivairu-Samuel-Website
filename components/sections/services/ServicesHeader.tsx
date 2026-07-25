@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/Badge';
 export const ServicesHeader = () => {
   return (
     <SlideUp className="text-center flex flex-col items-center gap-3">
-      <Badge variant="outline" className="w-fit">What I Build & Deliver</Badge>
+      <Badge variant="outline" className="w-fit">What I Build &amp; Deliver</Badge>
       <SectionHeading id="services-heading">
         Services &amp; Technical Expertise
       </SectionHeading>
