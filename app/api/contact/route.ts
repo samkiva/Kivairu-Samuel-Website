@@ -90,9 +90,17 @@ export async function POST(request: Request) {
     });
 
     if (!res.ok) {
-      const errorData = await res.json().catch(() => ({}));
-      console.error('Resend API Error:', errorData);
-      const detailedError = errorData?.message || 'Failed to send email via server handler.';
+      const rawText = await res.text().catch(() => '');
+      let errorData: { message?: string } = {};
+      try {
+        errorData = JSON.parse(rawText);
+      } catch {
+        // raw text response handling
+      }
+      console.error(`Resend Status: ${res.status}`);
+      console.error(`Resend Response: ${rawText}`);
+
+      const detailedError = errorData?.message || rawText || 'Failed to send email via server handler.';
       return NextResponse.json(
         { success: false, error: detailedError },
         { status: 500 }
