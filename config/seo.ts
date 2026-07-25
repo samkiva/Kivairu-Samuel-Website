@@ -1,9 +1,9 @@
 export const SEO_CONFIG = {
-  name: 'Kivairu Samuel — Software Developer, AI Engineer & Hardware Innovator',
-  shortName: 'Kivairu Samuel Portfolio',
+  name: 'Kivairu Samuel — AI & Software Engineer',
+  shortName: 'Kivairu Samuel',
   description:
-    'Official portfolio and digital headquarters of Kivairu Samuel. Specializing in AI engineering, full-stack software development, data analytics, and embedded aerospace research.',
-  url: process.env.NEXT_PUBLIC_APP_URL || 'https://kivairusamuel.com',
+    'Portfolio of Kivairu Samuel — AI Engineer, Full-Stack Developer, and Statistics student specializing in machine learning, Next.js, and embedded systems.',
+  url: process.env.NEXT_PUBLIC_APP_URL || 'https://kivairu-samuel.vercel.app',
   author: 'Kivairu Samuel',
   twitterHandle: '@samkiva',
   keywords: [

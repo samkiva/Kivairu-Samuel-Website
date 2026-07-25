@@ -47,9 +47,10 @@ export const metadata: Metadata = {
     siteName: SEO_CONFIG.shortName,
     images: [
       {
-        url: `${SEO_CONFIG.url}/og.png`,
+        url: '/og.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: SEO_CONFIG.name,
       },
     ],
@@ -58,8 +59,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SEO_CONFIG.name,
     description: SEO_CONFIG.description,
-    images: [`${SEO_CONFIG.url}/og.png`],
+    images: ['/og.png'],
     creator: SEO_CONFIG.twitterHandle,
+  },
+  facebook: {
+    appId: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || '966242223397117',
+  },
+  other: {
+    'fb:app_id': process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || '966242223397117',
   },
   metadataBase: new URL(SEO_CONFIG.url),
 };
