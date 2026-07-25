@@ -42,15 +42,13 @@ export function Drawer({ isOpen, onClose, position = 'right', children, classNam
   const trapRef = useFocusTrap(isOpen);
 
   // ── SSR guard ────────────────────────────────────────────────────────────
-  // createPortal requires the DOM to exist. This component has 'use client'
-  // so it never runs on the server. However, we still guard with mounted
-  // state to prevent a hydration mismatch on the first client render
-  // (server renders null, client renders null on paint 1, then mounts portal).
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
+  // createPortal requires the DOM to exist. We use React.useSyncExternalStore
+  // to return false on the server and true on the client without setState in effect.
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   // ── Body scroll lock + Escape key dismissal ───────────────────────────────
   // Identical behaviour to before — the portal location does not affect these.
