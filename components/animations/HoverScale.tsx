@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion, HTMLMotionProps, useReducedMotion } from 'framer-motion';
 import { ANIMATION_CONFIG } from '@/config/animations';
 
 export interface HoverScaleProps extends HTMLMotionProps<"div"> {
@@ -10,11 +10,15 @@ export interface HoverScaleProps extends HTMLMotionProps<"div"> {
 
 export const HoverScale = React.forwardRef<HTMLDivElement, HoverScaleProps>(
   ({ children, scale = ANIMATION_CONFIG.hover.scale, ...props }, ref) => {
+    const shouldReduceMotion = useReducedMotion();
+    const activeScale = shouldReduceMotion ? 1 : scale;
+    const activeTapScale = shouldReduceMotion ? 1 : ANIMATION_CONFIG.tap.scale;
+
     return (
       <motion.div
         ref={ref}
-        whileHover={{ scale }}
-        whileTap={{ scale: ANIMATION_CONFIG.tap.scale }}
+        whileHover={{ scale: activeScale }}
+        whileTap={{ scale: activeTapScale }}
         transition={ANIMATION_CONFIG.transition}
         {...props}
       >
