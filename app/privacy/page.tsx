@@ -55,7 +55,7 @@ export default function PrivacyPage() {
           <section className="space-y-2">
             <h2 className="text-lg font-bold text-foreground">4. Contact Information</h2>
             <p>
-              For privacy-related questions, reach out directly to <strong>kivairusamuel9409@gmail.com</strong>.
+              For privacy-related questions, reach out directly to <strong>kivairusamuel@gmail.com</strong>.
             </p>
           </section>
         </GlassCard>

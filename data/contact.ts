@@ -23,7 +23,7 @@ export const CONTACT_DATA: ContactConfig = {
   headline: "Let's Build Something Exceptional Together",
   subheadline:
     "Whether you have a complex software engineering project, AI model integration, research initiative, or technical consulting inquiry, I'm ready to collaborate.",
-  email: 'kivairusamuel9409@gmail.com',
+  email: 'kivairusamuel@gmail.com',
   phone: '+254 757 803 607',
   location: 'Nairobi, Kenya',
   responseTime: 'Typically responds within 24 hours',

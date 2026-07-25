@@ -53,7 +53,7 @@ export async function POST(request: Request) {
 
     // Resend Email API Integration
     const resendApiKey = process.env.RESEND_API_KEY;
-    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL || 'kivairusamuel9409@gmail.com';
+    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL || 'kivairusamuel@gmail.com';
 
     if (!resendApiKey) {
       console.error('Contact API Error: RESEND_API_KEY is not configured in environment variables.');
