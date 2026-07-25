@@ -45,10 +45,10 @@ export const MobileNav = () => {
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    'text-lg font-medium py-2 px-4 rounded-md transition-colors',
+                    'text-lg font-medium min-h-[44px] flex items-center py-2.5 px-4 rounded-xl active:scale-[0.98] transition-all select-none',
                     isActive
-                      ? 'bg-primary/10 text-primary'
-                      : 'hover:bg-muted text-muted-foreground hover:text-foreground'
+                      ? 'bg-primary/10 text-primary font-semibold'
+                      : 'hover:bg-muted text-muted-foreground hover:text-foreground active:bg-muted/80'
                   )}
                   {...(item.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
