@@ -72,29 +72,65 @@ export const metadata: Metadata = {
   other: {
     'fb:app_id': process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || '966242223397117',
   },
+  publisher: SEO_CONFIG.author,
+  category: 'technology',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   metadataBase: new URL(SEO_CONFIG.url),
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Kivairu Samuel',
-  url: SEO_CONFIG.url,
-  jobTitle: 'Software Developer, AI Engineer & Hardware Innovator',
-  alumniOf: {
-    '@type': 'EducationalOrganization',
-    name: 'University of Nairobi',
-  },
-  sameAs: [
-    'https://github.com/samkiva',
-    'https://www.linkedin.com/in/samuel-kivairu',
-  ],
-  knowsAbout: [
-    'Artificial Intelligence',
-    'Full-Stack Software Engineering',
-    'Data Analysis',
-    'Embedded Systems',
-    'Aerospace Systems',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SEO_CONFIG.url}/#person`,
+      name: 'Kivairu Samuel',
+      url: SEO_CONFIG.url,
+      image: `${SEO_CONFIG.url}/profile.jpg`,
+      jobTitle: 'AI Engineer & Software Developer',
+      description: SEO_CONFIG.description,
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        name: 'University of Nairobi',
+      },
+      sameAs: [
+        'https://github.com/samkiva',
+        'https://www.linkedin.com/in/samuel-kivairu',
+      ],
+      knowsAbout: [
+        'Artificial Intelligence',
+        'Machine Learning',
+        'Full-Stack Software Engineering',
+        'Data Analysis',
+        'Embedded Systems',
+        'Aerospace Systems',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SEO_CONFIG.url}/#website`,
+      url: SEO_CONFIG.url,
+      name: SEO_CONFIG.name,
+      description: SEO_CONFIG.description,
+      publisher: {
+        '@id': `${SEO_CONFIG.url}/#person`,
+      },
+    },
   ],
 };
 
