@@ -6,10 +6,14 @@ import { Badge } from '@/components/ui/Badge';
 export const ServicesHeader = () => {
   return (
     <SlideUp className="text-center flex flex-col items-center gap-3">
-      <Badge variant="outline" className="w-fit">Engineering Capabilities</Badge>
-      <SectionHeading>Services & Technical Expertise</SectionHeading>
+      <Badge variant="outline" className="w-fit">What I Build & Deliver</Badge>
+      <SectionHeading id="services-heading">
+        Services &amp; Technical Expertise
+      </SectionHeading>
       <SectionDescription className="max-w-2xl mx-auto">
-        Delivering end-to-end engineering solutions spanning artificial intelligence, full-stack web platforms, embedded firmware, and computational data analytics.
+        End-to-end engineering across artificial intelligence, full-stack web platforms,
+        embedded firmware, and data analytics — built to solve real problems and ship
+        production-ready results.
       </SectionDescription>
     </SlideUp>
   );

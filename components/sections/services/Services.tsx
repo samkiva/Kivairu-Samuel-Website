@@ -5,7 +5,11 @@ import { ServicesGrid } from './ServicesGrid';
 
 export const Services = () => {
   return (
-    <Section id="services" className="relative overflow-hidden">
+    <Section
+      id="services"
+      aria-labelledby="services-heading"
+      className="relative overflow-x-hidden"
+    >
       <Container>
         <ServicesHeader />
         <ServicesGrid />

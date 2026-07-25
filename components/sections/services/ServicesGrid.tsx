@@ -5,12 +5,18 @@ import { ServiceCard } from './ServiceCard';
 
 export const ServicesGrid = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
+    <ul
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 list-none p-0"
+      aria-label="Engineering services"
+    >
       {SERVICES_DATA.map((service, index) => (
-        <SlideUp key={service.id} delay={index * 0.08}>
-          <ServiceCard service={service} />
-        </SlideUp>
+        <li key={service.id}>
+          {/* Cap total stagger at 300 ms so the last card never feels delayed */}
+          <SlideUp delay={Math.min(index * 0.08, 0.3)} className="h-full">
+            <ServiceCard service={service} />
+          </SlideUp>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
