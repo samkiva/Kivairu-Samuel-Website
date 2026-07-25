@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/utils/cn';
@@ -7,6 +7,10 @@ import { AppProviders } from '@/components/providers/AppProviders';
 import { Navbar, Footer, PageWrapper } from '@/components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  themeColor: '#4F46E5',
+};
 
 export const metadata: Metadata = {
   title: {
