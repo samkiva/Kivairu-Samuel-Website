@@ -79,12 +79,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Format submission timestamp for inquiry metadata
+    // Format submission timestamp for inquiry metadata in East Africa Time (EAT, UTC+3)
     const submissionDate = new Date().toLocaleString('en-US', {
-      timeZone: 'UTC',
+      timeZone: 'Africa/Nairobi',
       dateStyle: 'full',
       timeStyle: 'medium',
-    }) + ' (UTC)';
+    }) + ' (EAT)';
 
     // Sanitize user inputs for safe HTML rendering
     const safeName = escapeHtml(name.trim());
