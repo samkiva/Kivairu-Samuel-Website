@@ -103,95 +103,101 @@ export async function POST(request: Request) {
       `----------------------------------------\n` +
       `Reply directly to: ${email.trim()}\n` +
       `Originated from: ${siteUrl}\n` +
-      `© ${currentYear} Kivairu Samuel. All rights reserved.`;
+      `Made with 💜 by Kivairu Samuel Portfolio`;
 
-    // Modern responsive HTML email template
+    // Canva-inspired clean HTML email template
     const htmlTemplate = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Portfolio Inquiry</title>
+  <title>New Inquiry from ${safeName}</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #F1F5F9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #0F172A;">
-  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F1F5F9; padding: 32px 16px;">
+<body style="margin: 0; padding: 0; background-color: #F4F4F6; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #111827;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F4F4F6; padding: 40px 16px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #FFFFFF; border-radius: 16px; border: 1px solid #E2E8F0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 580px; background-color: #FFFFFF; border-radius: 20px; padding: 40px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);">
           
-          <!-- Header Banner -->
+          <!-- Canva-Style Header: Brand Name + Status Badge -->
           <tr>
-            <td style="background-color: #0F172A; padding: 28px 32px; border-bottom: 3px solid #4F46E5;">
+            <td>
               <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td>
-                    <span style="display: inline-block; background-color: #4F46E5; color: #FFFFFF; font-weight: 700; font-family: monospace; font-size: 14px; padding: 6px 12px; border-radius: 8px; letter-spacing: 1px;">KS</span>
-                    <span style="display: inline-block; margin-left: 12px; color: #FFFFFF; font-size: 18px; font-weight: 700; vertical-align: middle;">Kivairu Samuel</span>
+                    <span style="font-size: 22px; font-weight: 800; tracking-tight: -0.03em; color: #7C3AED; font-family: 'SF Pro Display', -apple-system, sans-serif;">Kivairu Samuel</span>
                   </td>
                   <td align="right">
-                    <span style="display: inline-block; background-color: rgba(79,70,229,0.2); color: #818CF8; border: 1px solid rgba(129,140,248,0.3); font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 4px 10px; border-radius: 9999px; letter-spacing: 0.5px;">New Inquiry</span>
+                    <span style="display: inline-block; background-color: #F3F4F6; color: #4B5563; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 9999px; letter-spacing: 0.2px;">Portfolio Inquiry</span>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- Client Details Card -->
+          <!-- Hero Headline (Canva Style) -->
           <tr>
-            <td style="padding: 32px 32px 16px 32px;">
-              <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 700; color: #0F172A; tracking-tight: -0.02em;">Inquiry Details</h2>
-              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px;">
-                <tr>
-                  <td style="padding: 6px 0; font-size: 13px; color: #64748B; width: 100px; font-weight: 600; text-transform: uppercase; tracking: 0.5px;">Sender:</td>
-                  <td style="padding: 6px 0; font-size: 14px; color: #0F172A; font-weight: 600;">${safeName}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 6px 0; font-size: 13px; color: #64748B; font-weight: 600; text-transform: uppercase; tracking: 0.5px;">Email:</td>
-                  <td style="padding: 6px 0; font-size: 14px; color: #4F46E5; font-weight: 600;"><a href="mailto:${safeEmail}" style="color: #4F46E5; text-decoration: none;">${safeEmail}</a></td>
-                </tr>
-                <tr>
-                  <td style="padding: 6px 0; font-size: 13px; color: #64748B; font-weight: 600; text-transform: uppercase; tracking: 0.5px;">Subject:</td>
-                  <td style="padding: 6px 0; font-size: 14px; color: #0F172A; font-weight: 600;">${safeSubject}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 6px 0; font-size: 13px; color: #64748B; font-weight: 600; text-transform: uppercase; tracking: 0.5px;">Date:</td>
-                  <td style="padding: 6px 0; font-size: 13px; color: #64748B;">${submissionDate}</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Message Body -->
-          <tr>
-            <td style="padding: 16px 32px 24px 32px;">
-              <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.5px;">Message Content</h3>
-              <div style="background-color: #F8FAFC; border-left: 4px solid #4F46E5; border-top: 1px solid #E2E8F0; border-right: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; border-radius: 0 12px 12px 0; padding: 20px; font-size: 15px; line-height: 1.65; color: #1E293B; white-space: pre-wrap; word-break: break-word;">${safeMessage}</div>
-            </td>
-          </tr>
-
-          <!-- Quick Action Bar -->
-          <tr>
-            <td style="padding: 0 32px 32px 32px;">
-              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td align="center" style="background-color: #EEF2FF; border: 1px solid #C7D2FE; border-radius: 12px; padding: 20px;">
-                    <p style="margin: 0 0 12px 0; font-size: 14px; color: #3730A3; font-weight: 600;">Need to respond to this client?</p>
-                    <a href="mailto:${safeEmail}?subject=Re:%20${encodeURIComponent(subject.trim())}" style="display: inline-block; background-color: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px; box-shadow: 0 2px 4px rgba(79,70,229,0.2);">Reply to ${safeName} &rarr;</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- Footer & Security Note -->
-          <tr>
-            <td style="background-color: #F8FAFC; padding: 24px 32px; border-top: 1px solid #E2E8F0; font-size: 12px; color: #64748B; text-align: center; line-height: 1.5;">
-              <p style="margin: 0 0 8px 0; font-weight: 500; color: #475569;">
-                🔒 <strong>Security Note:</strong> This message originated from your portfolio contact form at <a href="${siteUrl}" style="color: #4F46E5; text-decoration: none;">${siteUrl}</a>.
+            <td style="padding-top: 36px;">
+              <h1 style="margin: 0 0 12px 0; font-size: 26px; font-weight: 800; color: #111827; letter-spacing: -0.025em; line-height: 1.25;">
+                You've received a new inquiry from ${safeName}
+              </h1>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B5563;">
+                A visitor has submitted a direct inquiry through your portfolio contact form. Here are the details and message content:
               </p>
-              <p style="margin: 0;">
-                &copy; ${currentYear} Kivairu Samuel. All rights reserved. Generated automatically from Kivairu Samuel Portfolio.
+            </td>
+          </tr>
+
+          <!-- Canva-Style Vibrant Action Button -->
+          <tr>
+            <td style="padding-top: 24px; padding-bottom: 28px;">
+              <a href="mailto:${safeEmail}?subject=Re:%20${encodeURIComponent(subject.trim())}" style="display: inline-block; background-color: #7C3AED; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none; padding: 14px 28px; border-radius: 10px; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);">Reply to ${safeName} &rarr;</a>
+            </td>
+          </tr>
+
+          <!-- Client Details Card Summary -->
+          <tr>
+            <td>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F9FAFB; border: 1px solid #F3F4F6; border-radius: 14px; padding: 20px;">
+                <tr>
+                  <td style="padding: 6px 0; font-size: 13px; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; width: 100px;">Sender:</td>
+                  <td style="padding: 6px 0; font-size: 14px; color: #111827; font-weight: 600;">${safeName}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-size: 13px; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email:</td>
+                  <td style="padding: 6px 0; font-size: 14px; color: #7C3AED; font-weight: 600;"><a href="mailto:${safeEmail}" style="color: #7C3AED; text-decoration: none;">${safeEmail}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-size: 13px; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Subject:</td>
+                  <td style="padding: 6px 0; font-size: 14px; color: #111827; font-weight: 600;">${safeSubject}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; font-size: 13px; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Received:</td>
+                  <td style="padding: 6px 0; font-size: 13px; color: #6B7280;">${submissionDate}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Message Showcase Card -->
+          <tr>
+            <td style="padding-top: 24px;">
+              <h3 style="margin: 0 0 12px 0; font-size: 13px; font-weight: 700; text-transform: uppercase; color: #6B7280; letter-spacing: 0.6px;">Message</h3>
+              <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; padding: 24px; font-size: 15px; line-height: 1.65; color: #1F2937; white-space: pre-wrap; word-break: break-word;">${safeMessage}</div>
+            </td>
+          </tr>
+
+          <!-- Canva-Style Footer -->
+          <tr>
+            <td style="padding-top: 40px; border-top: 1px solid #F3F4F6; margin-top: 32px; text-align: center;">
+              <p style="margin: 0 0 12px 0; font-size: 13px; color: #6B7280; line-height: 1.5;">
+                You are receiving this notification because someone contacted you via your <a href="${siteUrl}" style="color: #7C3AED; text-decoration: none; font-weight: 600;">Kivairu Samuel Portfolio</a>.
+              </p>
+              <p style="margin: 0 0 8px 0; font-size: 12px; color: #9CA3AF; font-weight: 500;">
+                Made for you with 💜 by Kivairu Samuel
+              </p>
+              <p style="margin: 0; font-size: 11px; color: #9CA3AF;">
+                &copy; ${currentYear} Kivairu Samuel. All rights reserved.
               </p>
             </td>
           </tr>
