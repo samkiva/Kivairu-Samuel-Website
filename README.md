@@ -1,11 +1,13 @@
 # Kivairu Samuel — Portfolio & Engineering Platform
 
+[![Live Website](https://img.shields.io/badge/Live_Website-kivairu--samuel.vercel.app-4F46E5?style=for-the-badge&logo=vercel&logoColor=white)](https://kivairu-samuel.vercel.app)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-cyan?logo=tailwindcss)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+> 🌐 **Live Website**: [https://kivairu-samuel.vercel.app](https://kivairu-samuel.vercel.app)  
 > The official digital headquarters and portfolio platform for **Kivairu Samuel** — AI Engineer, Software Developer, Data Analyst, and Embedded Systems Innovator based in Nairobi, Kenya.
 
 ---
